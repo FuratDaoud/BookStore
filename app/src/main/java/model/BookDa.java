@@ -23,4 +23,11 @@ import java.util.List;
 
     return data;
 }
-}
+
+     @Override
+     public String[] getCategorries() {
+         String [] cats = new String[]{"java" , "C#" , "paython"};
+         return cats;
+    }
+
+ }
