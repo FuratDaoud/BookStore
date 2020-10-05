@@ -17,9 +17,7 @@ import model.IBookDa;
 public class MainActivity extends AppCompatActivity {
     private Spinner spinner;
 
-    public MainActivity(Spinner spinner) {
-        this.spinner = spinner;
-    }
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -44,11 +42,13 @@ public class MainActivity extends AppCompatActivity {
     public void btnGetBooksOnclick(View view) {
         Bookfactory factory=new  Bookfactory();
         IBookDa objBook=factory.getModel();
+        String item="";
+        item=spinner.getSelectedItem().toString();
         List<Book> books = objBook.getBooks("Java");
         String str = "";
         for (Book b:books){
             str+=b.getTitle() + "\n";
         }
-        Toast.makeText(this,str, Toast.LENGTH_SHORT).show();
+        Toast.makeText(this,item, Toast.LENGTH_SHORT).show();
     }
 }
